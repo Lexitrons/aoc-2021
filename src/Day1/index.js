@@ -25,11 +25,10 @@ function testGroups(data) {
 }
 
 function Day1() {
-  console.log( INPUT_PATH )
   const data = readInput(INPUT_PATH).map((elem) => parseInt(elem))
   const part1 = testDepths(data);
   const part2 = testGroups(data)
-  
+
   console.log( "DAY 1");
   console.log( "Part 1", part1)
   console.log( "Part 2", part2)
