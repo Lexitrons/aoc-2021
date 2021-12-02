@@ -1,5 +1,5 @@
 import readInput from "../utils/readInput";
-import path from 'path';
+import path, { parse } from 'path';
 import sumArray from "../utils/sumArray";
 
 const INPUT_PATH = path.join(__dirname, 'input.txt');
@@ -24,14 +24,14 @@ function testGroups(data) {
   return testDepths(groups)
 }
 
+const parseData = (arr) => arr.map((elem) => parseInt(elem));
+
 function Day1() {
-  const data = readInput(INPUT_PATH).map((elem) => parseInt(elem))
+  const data = readInput(INPUT_PATH, parseData)
   const part1 = testDepths(data);
   const part2 = testGroups(data)
 
-  console.log( "DAY 1");
-  console.log( "Part 1", part1)
-  console.log( "Part 2", part2)
+  displayResults(1, part1, part2)
 }
 
 export default Day1;
